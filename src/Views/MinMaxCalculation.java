@@ -10,12 +10,14 @@ public class MinMaxCalculation {
 
         // Calculate and display the minimum and maximum values
         double min = obj.calculateMin(numbers);
+        double max = obj.calculateMax(numbers);
 
         System.out.println("Sample input numbers:");
         for (double number : numbers) {
             System.out.print(number + " ");
         }
         System.out.println("\nMinimum value: " + min);
+        System.out.println("\nMaximum value: " + max);
     }
 
     // Method to compute the minimum value in an array of numbers
@@ -33,4 +35,21 @@ public class MinMaxCalculation {
 
         return min;
     }
+
+    // Method to compute the maximum value in an array of numbers
+    public static double calculateMax(double[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            throw new IllegalArgumentException("Input array is empty or null");
+        }
+
+        double max = numbers[0];
+        for (double number : numbers) {
+            if (number > max) {
+                max = number;
+            }
+        }
+
+        return max;
+    }
+
 }
